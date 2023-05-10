@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Happy Pet</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230510095625">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__menu menu">
+					<a href="#" data-goto=".wrapper" class="menu__logo">
+						<img src="img/logo.svg" alt="logo">
+					</a>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li><a href="#" data-goto=".wrapper" class="menu-link menu-link_main">Главная</a></li>
+							<li><a href="#" data-goto-top="80" data-goto=".catalog" class="menu-link">Друзья</a></li>
+							<li><a href="#" data-goto-top="80" data-goto=".about" class="menu-link">О сервисе</a></li>
+							<li><a href="#" data-goto-top="80" data-goto=".questions" class="menu-link">Контакты</a></li>
+						</ul>
+						<a href="#" data-goto-top="80" data-goto=".questions" class="menu__phone phone-menu">
+							<div class="phone-menu__image">
+								<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_1_49)">
+										<path d="M15.6359 11.1586C14.5951 11.1586 13.5732 10.9958 12.6047 10.6757C12.1302 10.5139 11.5469 10.6624 11.2572 10.9598L9.34575 12.4028C7.12898 11.2195 5.76349 9.85442 4.59633 7.65429L5.99684 5.79262C6.3607 5.42924 6.49121 4.89844 6.33485 4.40039C6.01344 3.42687 5.85017 2.40541 5.85017 1.36416C5.85021 0.611956 5.23826 0 4.4861 0H1.36412C0.611956 0 0 0.611956 0 1.36412C0 9.98586 7.01418 17 15.6359 17C16.3881 17 17 16.388 17 15.6359V12.5226C17 11.7705 16.388 11.1586 15.6359 11.1586Z" fill="black" />
+									</g>
+									<defs>
+										<clipPath id="clip0_1_49">
+											<rect width="17" height="17" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</div>
+							<div class="phone-menu__number">+7 968 658-23-76</div>
+						</a>
+						<a href="#" class="menu__buscket buscket-menu">
+							<div class="buscket-menu__icon">
+								<svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="20.5" cy="20.5" r="20.5" fill="black" />
+									<path d="M15.7994 23.6369H15.8002C15.8009 23.6369 15.8016 23.6367 15.8023 23.6367H25.3633C25.5987 23.6367 25.8056 23.4806 25.8703 23.2543L27.9797 15.8714C28.0251 15.7123 27.9933 15.5412 27.8937 15.4091C27.794 15.2769 27.6381 15.1992 27.4727 15.1992H14.5832L14.2063 13.5028C14.1526 13.2615 13.9386 13.0898 13.6914 13.0898H10.5273C10.2361 13.0898 10 13.3259 10 13.6172C10 13.9085 10.2361 14.1445 10.5273 14.1445H13.2684C13.3352 14.4451 15.0724 22.2627 15.1724 22.7125C14.6119 22.9561 14.2188 23.5149 14.2188 24.1641C14.2188 25.0364 14.9285 25.7461 15.8008 25.7461H25.3633C25.6546 25.7461 25.8906 25.51 25.8906 25.2187C25.8906 24.9275 25.6546 24.6914 25.3633 24.6914H15.8008C15.5101 24.6914 15.2734 24.4548 15.2734 24.1641C15.2734 23.8737 15.5092 23.6375 15.7994 23.6369ZM26.7735 16.2539L24.9654 22.582H16.2238L14.8175 16.2539H26.7735Z" fill="white" />
+									<path d="M15.2734 27.3281C15.2734 28.2004 15.9832 28.9102 16.8555 28.9102C17.7278 28.9102 18.4375 28.2004 18.4375 27.3281C18.4375 26.4558 17.7278 25.7461 16.8555 25.7461C15.9832 25.7461 15.2734 26.4558 15.2734 27.3281ZM16.8555 26.8008C17.1462 26.8008 17.3828 27.0374 17.3828 27.3281C17.3828 27.6189 17.1462 27.8555 16.8555 27.8555C16.5647 27.8555 16.3281 27.6189 16.3281 27.3281C16.3281 27.0374 16.5647 26.8008 16.8555 26.8008Z" fill="white" />
+									<path d="M22.7266 27.3281C22.7266 28.2004 23.4363 28.9102 24.3086 28.9102C25.1809 28.9102 25.8906 28.2004 25.8906 27.3281C25.8906 26.4558 25.1809 25.7461 24.3086 25.7461C23.4363 25.7461 22.7266 26.4558 22.7266 27.3281ZM24.3086 26.8008C24.5993 26.8008 24.8359 27.0374 24.8359 27.3281C24.8359 27.6189 24.5993 27.8555 24.3086 27.8555C24.0179 27.8555 23.7812 27.6189 23.7812 27.3281C23.7812 27.0374 24.0179 26.8008 24.3086 26.8008Z" fill="white" />
+								</svg>
+							</div>
+							<div class="buscket-menu__price">9 765 р.</div>
+						</a>
+					</nav>
+					<div class="menu__icon">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="main-screen">
+				<div class="main-screen__content content-main-screen">
+					<div class="content-main-screen__container">
+						<div class="content-main-screen__body">
+							<h1 class="content-main-screen__title">Твой новый друг с доставкой на дом</h1>
+							<div class="content-main-screen__text">Онлайн-магазин домашних животных подарит тебе нового друга в несколько кликов. Действуй!</div>
+							<a href="#" data-goto-top="80" data-goto=".catalog" class="content-main-screen__button button button_red">Посмотреть друзей</a>
+						</div>
+					</div>
+				</div>
+				<div class="main-screen__image-ibg">
+					<picture><source srcset="img/main-screen/animals.webp" type="image/webp"><img src="img/main-screen/animals.png" alt=""></picture>
+				</div>
+			</section>
+			<div class="pets">
+				<div class="pets__container">
+					<div class="pets__content">
+						<a href="#" class="pets__item item-pets">
+							<div class="item-pets__link">
+								<div class="item-pets__sub-title item-pets__sub-title_r">Собаки</div>
+								<div class="item-pets__icon">
+									<img src="img/pets/icon/arrow-right.svg" alt="icon">
+								</div>
+							</div>
+							<div class="item-pets__image">
+								<picture><source srcset="img/pets/dog.webp" type="image/webp"><img src="img/pets/dog.png" alt="image"></picture>
+							</div>
+						</a>
+						<a href="#" class="pets__item item-pets">
+							<div class="item-pets__link">
+								<div class="item-pets__sub-title item-pets__sub-title_g">Птицы</div>
+								<div class="item-pets__icon">
+									<img src="img/pets/icon/arrow-right.svg" alt="icon">
+								</div>
+							</div>
+							<div class="item-pets__image">
+								<picture><source srcset="img/pets/birds.webp" type="image/webp"><img src="img/pets/birds.png" alt="image"></picture>
+							</div>
+						</a>
+						<a href="#" class="pets__item item-pets">
+							<div class="item-pets__link">
+								<div class="item-pets__sub-title item-pets__sub-title_r">Собаки</div>
+								<div class="item-pets__icon">
+									<img src="img/pets/icon/arrow-right.svg" alt="icon">
+								</div>
+							</div>
+							<div class="item-pets__image">
+								<picture><source srcset="img/pets/dog.webp" type="image/webp"><img src="img/pets/dog.png" alt="image"></picture>
+							</div>
+						</a>
+						<a href="#" class="pets__item item-pets">
+							<div class="item-pets__link">
+								<div class="item-pets__sub-title item-pets__sub-title_g">Птицы</div>
+								<div class="item-pets__icon">
+									<img src="img/pets/icon/arrow-right.svg" alt="icon">
+								</div>
+							</div>
+							<div class="item-pets__image">
+								<picture><source srcset="img/pets/birds.webp" type="image/webp"><img src="img/pets/birds.png" alt="image"></picture>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<section class="why-choose-us">
+				<div class="why-choose-us__container">
+					<h3 class="why-choose-us__title title">Почему выбирают наших друзей</h3>
+					<div class="why-choose-us__content">
+						<div class="why-choose-us__item item-why-choose-us">
+							<div class="item-why-choose-us__icon">
+								<img src="img/why-choose-us/icon/02.svg" alt="icon">
+							</div>
+							<div class="item-why-choose-us__body">
+								<div class="item-why-choose-us__subtitle">Их много</div>
+								<div class="item-why-choose-us__text">Огромный выбор животных, птиц и питомцев</div>
+							</div>
+						</div>
+						<div class="why-choose-us__item item-why-choose-us">
+							<div class="item-why-choose-us__icon">
+								<img src="img/why-choose-us/icon/01.svg" alt="icon">
+							</div>
+							<div class="item-why-choose-us__body">
+								<div class="item-why-choose-us__subtitle">Они здоровы</div>
+								<div class="item-why-choose-us__text">Мы заботимся о каждом питомце, который с нами</div>
+							</div>
+						</div>
+						<div class="why-choose-us__item item-why-choose-us">
+							<div class="item-why-choose-us__icon">
+								<img src="img/why-choose-us/icon/03.svg" alt="icon">
+							</div>
+							<div class="item-why-choose-us__body">
+								<div class="item-why-choose-us__subtitle">Их любят</div>
+								<div class="item-why-choose-us__text">Мы окружаем любовью и вниманием наших друзей</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="catalog">
+				<div data-tabs class="catalog__container">
+					<h3 class="catalog__title title">Каталог животных</h3>
+					<div data-tabs-titles class="catalog__button-block block-button">
+						<div class="block-button__button _tab-active">Все</div>
+						<div class="block-button__button">Собаки</div>
+						<div class="block-button__button">Кошки</div>
+						<div class="block-button__button">Обезьяны</div>
+						<div class="block-button__button">Хомяки</div>
+						<div class="block-button__button">Попугаи</div>
+					</div>
+					<div data-tabs-body class="tabs__content">
+						<div class="catalog__content">
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number4.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/dog.webp" type="image/webp"><img src="img/catalog/dog.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Доберман</div>
+									<div class="body-item-catalog__text">Отличный новый друг для всей семьи, охраняет и обожает</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">собака</div>
+										<div class="feature-body-item-catalog__two">хищник</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">5 900 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number7.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number3.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/cat.webp" type="image/webp"><img src="img/catalog/cat.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Вислоухая кошка</div>
+									<div class="body-item-catalog__text">Прекрасная подруга на дождливые холодные времена</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">Кошка</div>
+										<div class="feature-body-item-catalog__two">мышкоедная</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">7 200 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number7.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/monkey.webp" type="image/webp"><img src="img/catalog/monkey.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Шимпанзе</div>
+									<div class="body-item-catalog__text">Домашний питомец для тех, кому не хочется скучать</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">Обезьяна</div>
+										<div class="feature-body-item-catalog__two">Травоядная</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">12 500 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number7.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number3.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/cat.webp" type="image/webp"><img src="img/catalog/cat.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Вислоухая кошка</div>
+									<div class="body-item-catalog__text">Прекрасная подруга на дождливые холодные времена</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">Кошка</div>
+										<div class="feature-body-item-catalog__two">мышкоедная</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">7 200 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number4.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/dog.webp" type="image/webp"><img src="img/catalog/dog.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Доберман</div>
+									<div class="body-item-catalog__text">Отличный новый друг для всей семьи, охраняет и обожает</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">собака</div>
+										<div class="feature-body-item-catalog__two">хищник</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">5 900 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="catalog__content">
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number4.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/dog.webp" type="image/webp"><img src="img/catalog/dog.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Доберман</div>
+									<div class="body-item-catalog__text">Отличный новый друг для всей семьи, охраняет и обожает</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">собака</div>
+										<div class="feature-body-item-catalog__two">хищник</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">5 900 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number4.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/dog.webp" type="image/webp"><img src="img/catalog/dog.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Доберман</div>
+									<div class="body-item-catalog__text">Отличный новый друг для всей семьи, охраняет и обожает</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">собака</div>
+										<div class="feature-body-item-catalog__two">хищник</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">5 900 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number4.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/dog.webp" type="image/webp"><img src="img/catalog/dog.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Доберман</div>
+									<div class="body-item-catalog__text">Отличный новый друг для всей семьи, охраняет и обожает</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">собака</div>
+										<div class="feature-body-item-catalog__two">хищник</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">5 900 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="catalog__content">
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number7.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number3.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/cat.webp" type="image/webp"><img src="img/catalog/cat.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Вислоухая кошка</div>
+									<div class="body-item-catalog__text">Прекрасная подруга на дождливые холодные времена</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">Кошка</div>
+										<div class="feature-body-item-catalog__two">мышкоедная</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">7 200 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number7.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number3.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/cat.webp" type="image/webp"><img src="img/catalog/cat.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Вислоухая кошка</div>
+									<div class="body-item-catalog__text">Прекрасная подруга на дождливые холодные времена</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">Кошка</div>
+										<div class="feature-body-item-catalog__two">мышкоедная</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">7 200 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="catalog__content">
+							<a href="#" class="catalog__item item-catalog">
+								<div class="item-catalog__header item-catalog-header">
+									<div class="item-catalog-header__age">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number7.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">месяца</div>
+									</div>
+									<div class="item-catalog-header__tribute">
+										<div class="item-catalog-header__icon"><img src="img/catalog/icon/number2.svg" alt="icon"></div>
+										<div class="item-catalog-header__text text">награды</div>
+									</div>
+									<div class="item-catalog-header__toilet"><img src="img/catalog/icon/toilet.svg" alt="icon"></div>
+								</div>
+								<div class="item-catalog__image"><picture><source srcset="img/catalog/monkey.webp" type="image/webp"><img src="img/catalog/monkey.jpg" alt="image"></picture></div>
+								<div class="item-catalog__body body-item-catalog">
+									<div class="body-item-catalog__title">Шимпанзе</div>
+									<div class="body-item-catalog__text">Домашний питомец для тех, кому не хочется скучать</div>
+									<div class="body-item-catalog__feature feature-body-item-catalog">
+										<div class="feature-body-item-catalog__one">Обезьяна</div>
+										<div class="feature-body-item-catalog__two">Травоядная</div>
+									</div>
+									<div class="item-catalog__prices prices-item-catalog">
+										<div class="prices-item-catalog__price">12 500 р.</div>
+										<div class="prices-item-catalog__icon"><img src="img/catalog/icon/pow.svg" alt="icon"></div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="gallery">
+				<div class="gallery__container">
+					<h3 class="gallery__title title">Мы любим поиграть </h3>
+					<div class="gallery__body">
+						<div class="gallery__column gallery__column_1">
+							<div class="gallery__item gallery__item_1">
+								<picture><source srcset="img/gallery/01.webp" type="image/webp"><img src="img/gallery/01.png" alt="image"></picture>
+								<a href="#" data-popup="#popup_01" class="gallery__icon">
+									<img src="img/gallery/icon/scale.svg" alt="">
+								</a>
+							</div>
+							<div class="gallery__item gallery__item_2">
+								<picture><source srcset="img/gallery/02.webp" type="image/webp"><img src="img/gallery/02.png" alt="image"></picture>
+								<a href="#" data-popup="#popup_02" class="gallery__icon">
+									<img src="img/gallery/icon/scale.svg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="gallery__column gallery__column_2">
+							<div class="gallery__item gallery__item_3">
+								<picture><source srcset="img/gallery/03.webp" type="image/webp"><img src="img/gallery/03.png" alt="image"></picture>
+								<a href="#" data-popup="#popup_03" class="gallery__icon">
+									<img src="img/gallery/icon/scale.svg" alt="">
+								</a>
+							</div>
+							<div class="gallery__item gallery__item_4">
+								<picture><source srcset="img/gallery/04.webp" type="image/webp"><img src="img/gallery/04.png" alt="image"></picture>
+								<a href="#" data-popup="#popup_04" class="gallery__icon">
+									<img src="img/gallery/icon/scale.svg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="gallery__column gallery__column_3">
+							<div data-da=".gallery__column_1,767,3" class="gallery__item gallery__item_5">
+								<picture><source srcset="img/gallery/05.webp" type="image/webp"><img src="img/gallery/05.png" alt="image"></picture>
+								<a href="#" data-popup="#popup_05" class="gallery__icon">
+									<img src="img/gallery/icon/scale.svg" alt=""></a>
+							</div>
+							<div data-da=".gallery__column_2,767,3" class="gallery__item gallery__item_6">
+								<picture><source srcset="img/gallery/06.webp" type="image/webp"><img src="img/gallery/06.png" alt="image"></picture>
+								<a href="#" data-popup="#popup_06" class="gallery__icon">
+									<img src="img/gallery/icon/scale.svg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="about">
+				<div class="about__container">
+					<div class="about__body">
+						<div class="about__content content-about">
+							<h3 class="content-about__title title">О питомнике Happy Pet</h3>
+							<div class="content-about__sub-title">Мы - команда мечтателей</div>
+							<div class="content-about__sub-text">
+								<p>Нашей главной специализацией является производство клематисов. В нашей коллекции имеется более 450 видов и сортов клематиса, но для коммерческих целей мы производим только немногим более 280 экземпляров клематиса Ломоноса – клематисы с большим и маленьким цветком, а также стелющиеся формы клематиса в широком диапазоне.</p>
+								<p>У нас также есть дополнительная специальность вьющиеся растения которые могут расти в саду в польских климатических условиях; мы производим более сотни видов и сортов таких растений.</p>
+							</div>
+							<a href="#" class="content-about__link">Читать больше →
+							</a>
+						</div>
+						<div class="about__image">
+							<picture><source srcset="img/about/image.webp" type="image/webp"><img src="img/about/image.png" alt="icon"></picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="questions">
+				<div class="questions__container">
+					<div class="questions__body">
+						<h3 class="questions__title">Есть вопросы? Задавайте!</h3>
+						<div class="questions-form__body">
+							<form action="#" class="questions__form">
+								<div class="questions-form__box">
+									<div class="questions-form__item">
+										<input class="questions__input" type="text" autocomplete="off" name="form[]" placeholder="Введите имя">
+									</div>
+									<div class="questions-form__item">
+										<input class="questions__input" type="email" data-required="email" data-error="error" autocomplete="off" name="form[]" placeholder="Введите E-mail">
+									</div>
+									<div class="questions-form__item">
+										<input class="questions__input" type="tel" autocomplete="off" name="form[]" placeholder="Введите телефон">
+									</div>
+								</div>
+								<div class="questions-form__area-box">
+									<textarea class="questions-form__text-area" autocomplete="off" placeholder="Введите сообщение" name="[form]"></textarea>
+									<input type="submit" class="questions__button">
+								</div>
+								<div class="questions-form__checkbox-box">
+									<input class="questions__checkbox" type="checkbox" name="checkbox_1">
+									Я согласен на обработку моих персональных данных
+								</div>
+								<div class="questions-form__checkbox-box">
+									<input class="questions__checkbox" type="checkbox">
+									Я согласен с политикой конфиденциальности
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="footer__column footer__column_01">
+						<a href="#" data-goto=".wrapper" class="footer__logo">
+							<img src="img/logo_2.svg" alt="logo">
+						</a>
+					</div>
+					<div class="footer__column footer__column_02">
+						<div class="footer__copy">2020 © Все права защищены</div>
+					</div>
+					<div class="footer__column footer__column_03">
+						<a href="#" data-goto=".wrapper" class="footer__arrow">
+							<img src="img/footer/icon/arrow-up.svg" alt="icon">
+						</a>
+					</div>
+					<div class="footer__column footer__column_04">
+						<a href="#" data-goto-top="80" data-goto=".questions" class="footer__call call-footer">
+							<div class="call-footer__icon">
+								<img src="img/footer/icon/call.svg" alt="icon">
+							</div>
+							<div class="call-footer__number">+7 968 658-23-76</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<div id="popup_01" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<picture><source srcset="img/gallery/01.webp" type="image/webp"><img src="img/gallery/01.png" alt="image"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup_02" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<picture><source srcset="img/gallery/02.webp" type="image/webp"><img src="img/gallery/02.png" alt="image"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup_03" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<picture><source srcset="img/gallery/03.webp" type="image/webp"><img src="img/gallery/03.png" alt="image"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup_04" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<picture><source srcset="img/gallery/04.webp" type="image/webp"><img src="img/gallery/04.png" alt="image"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup_05" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<picture><source srcset="img/gallery/05.webp" type="image/webp"><img src="img/gallery/05.png" alt="image"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup_06" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__text">
+					<picture><source srcset="img/gallery/06.webp" type="image/webp"><img src="img/gallery/06.png" alt="image"></picture>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/app.min.js?_v=20230510095625"></script>
+</body>
+
+</html>
